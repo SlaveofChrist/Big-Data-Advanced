@@ -175,3 +175,30 @@ db.accounts.drop();
       }
     }
  })
+
+ db.clients.createIndex({
+  "firstName" : 1,
+  "lastName" : 1,
+  "address.town": 1,
+  "address.street" : 1,
+  "address.numberStreet" : 1
+})
+
+db.agencies.createIndex({
+  "name" : 1,
+  "address.town": 1,
+  "address.street" : 1,
+  "address.numberStreet" : 1
+})
+
+db.accounts.createIndex({
+  "_id" : 1,
+  "type" : 1
+})
+
+db.transactions.createIndex({
+  "_id" : 1
+})
+
+
+
