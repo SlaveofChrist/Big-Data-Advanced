@@ -1,0 +1,62 @@
+[{
+  "_id": 1,
+  "name": "Agency A",
+  "address": {
+    "numberStreet": 123,
+    "street": "Main Street",
+    "town": "City",
+    "postalCode": "12345",
+    "country": "Country"
+  },
+  "managers_id": 1,
+  "accounts": [
+    1,
+    2,
+    3
+  ]
+},{
+  "_id": 2,
+  "name": "Agency B",
+  "address": {
+    "numberStreet": 456,
+    "street": "Oak Avenue",
+    "town": "Nice",
+    "postalCode": "54321",
+    "country": "Country"
+  },
+  "managers_id": 2,
+  "accounts": [
+    4,
+    5
+  ]
+},{
+  "_id": 3,
+  "name": "Agency C",
+  "address": {
+    "numberStreet": 789,
+    "street": "Maple Street",
+    "town": "Fréjus",
+    "postalCode": "98765",
+    "country": "Country"
+  },
+  "managers_id": 3,
+  "accounts": [
+    6
+  ]
+},{
+  "_id": 4,
+  "name": "Agency D",
+  "address": {
+    "numberStreet": 22,
+    "street": "Main Street",
+    "town": "BMD",
+    "postalCode": "99999",
+    "country": "aravat"
+  },
+  "managers_id": 4,
+  "accounts": [
+    6,
+    7,
+    8
+  ]
+}]

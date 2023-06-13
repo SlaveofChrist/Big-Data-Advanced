@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Big-Data-Advanced.iml" filepath="$PROJECT_DIR$/.idea/Big-Data-Advanced.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-agency/bank-agency.iml" filepath="$PROJECT_DIR$/bank-agency/bank-agency.iml" />
     </modules>
   </component>
 </project>

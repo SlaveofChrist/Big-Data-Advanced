@@ -1,0 +1,29 @@
+[{
+  "_id": 4,
+  "dateTransaction": "05/10/2022",
+  "status": "completed",
+  "amount": 250,
+  "destination_id_client": 3,
+  "clients_id": 2
+},{
+  "_id": 1,
+  "dateTransaction": "02/01/2022",
+  "status": "completed",
+  "amount": 100,
+  "destination_id_client": 2,
+  "clients_id": 1
+},{
+  "_id": 2,
+  "dateTransaction": "05/12/2022",
+  "status": "completed",
+  "amount": 500,
+  "destination_id_client": 1,
+  "clients_id": 2
+},{
+  "_id": 3,
+  "dateTransaction": "08/02/2022",
+  "status": "completed",
+  "amount": 1000,
+  "destination_id_client": 3,
+  "clients_id": 3
+}]

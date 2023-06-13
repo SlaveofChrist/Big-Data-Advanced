@@ -1,0 +1,33 @@
+[{
+  "_id": 2,
+  "balance": 2000,
+  "created_at": "02/01/2022",
+  "closed_at": "null",
+  "type": "current account",
+  "clients_id": 1,
+  "agencies_id": 1
+},{
+  "_id": 3,
+  "balance": 5100,
+  "created_at": "05/12/2022",
+  "closed_at": "null",
+  "type": "savings account",
+  "clients_id": 2,
+  "agencies_id": 1
+},{
+  "_id": 4,
+  "balance": 2000,
+  "created_at": "08/02/2022",
+  "closed_at": "null",
+  "type": "savings account",
+  "clients_id": 3,
+  "agencies_id": 2
+},{
+  "_id": 1,
+  "balance": 2000,
+  "created_at": "02/01/2022",
+  "closed_at": "null",
+  "type": "current account",
+  "clients_id": 3,
+  "agencies_id": 2
+}]
