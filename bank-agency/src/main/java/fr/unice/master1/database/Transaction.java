@@ -1,4 +1,4 @@
-package fr.unice.master1;
+package fr.unice.master1.database;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;

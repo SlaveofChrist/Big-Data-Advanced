@@ -40,32 +40,18 @@ db.createCollection("agencies", {
             $jsonSchema: {
                 bsonType: 'object',
                 additionalProperties: false,
-                required: [
-                    '_id',
-                    'name',
-                    'address'
-                ],
+                required: ['_id', 'name', 'address'],
                 properties: {
-                    _id: {
-                        bsonType: 'number'
-                    },
+                    _id: {bsonType: 'number'},
                     name: {
                         bsonType: 'string',
                         description: 'must be a string and is required'
                     },
                     address: {
                         bsonType: 'object',
-                        required: [
-                            'numberStreet',
-                            'street',
-                            'town',
-                            'postalCode',
-                            'country'
-                        ],
+                        required: ['numberStreet', 'street', 'town', 'postalCode', 'country'],
                         properties: {
-                            numberStreet: {
-                                bsonType: 'number'
-                            },
+                            numberStreet: {bsonType: 'number'},
                             street: {
                                 bsonType: 'string'
                             },
@@ -80,11 +66,8 @@ db.createCollection("agencies", {
                             }
                         }
                     },
-                    managers_id: {
-                        bsonType: 'number'
-                    },
-                    accounts: {
-                        bsonType: 'array',
+                    managers_id: {bsonType: 'number'},
+                    accounts: {bsonType: 'array',
                         items: {
                             bsonType: 'number'
                         }
@@ -100,15 +83,7 @@ db.createCollection("clients", {
             $jsonSchema: {
                 bsonType: 'object',
                 additionalProperties: false,
-                required: [
-                    '_id',
-                    'lastName',
-                    'firstName',
-                    'phone',
-                    'address',
-                    'accounts',
-                    'transactions'
-                ],
+                required: ['_id', 'lastName', 'firstName', 'phone', 'address', 'accounts', 'transactions'],
                 properties: {
                     _id: {
                         bsonType: 'number'
@@ -166,10 +141,7 @@ db.createCollection("managers", {
         {
             $jsonSchema: {
                 bsonType: 'object',
-                required: [
-                    '_id',
-                    'name'
-                ],
+                required: ['_id', 'name'],
                 properties: {
                     _id: {
                         bsonType: 'number'
@@ -192,14 +164,7 @@ db.createCollection("transactions", {
             $jsonSchema: {
                 bsonType: 'object',
                 additionalProperties: false,
-                required: [
-                    '_id',
-                    'dateTransaction',
-                    'status',
-                    'amount',
-                    'destination_id_client',
-                    'clients_id'
-                ],
+                required: ['_id', 'dateTransaction', 'status', 'amount', 'destination_id_client', 'clients_id'],
                 properties: {
                     _id: {
                         bsonType: 'number'

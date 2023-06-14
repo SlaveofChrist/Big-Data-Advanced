@@ -1,4 +1,4 @@
-package fr.unice.master1;
+package fr.unice.master1.database;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
@@ -145,7 +145,7 @@ public class Client {
 
         colClients=database.getCollection(nomCollection);
         System.out.println("!!!! Collection Client : "+colClients);
-        // Visiblement jamais !!!
+
         if (colClients==null) {
             System.out.println("Collection inexistante");
         }

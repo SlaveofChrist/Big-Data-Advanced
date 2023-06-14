@@ -1,4 +1,4 @@
-package fr.unice.master1;
+package fr.unice.master1.database;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
@@ -113,14 +113,14 @@ public class Compte {
             );
 
 
-            // TD9 : Supprimer le compte Nr 4
+            // Supprimer le compte
 
-            System.out.println("\n\nSupprimer le compte Nr 4");
+            System.out.println("\n\nSupprimer le compte Nr 10");
             //compte.deleteComptes(compte.CompteCollectionName,
               //      new Document("_id",10)
             //);
 
-            // TD10 : Supprimer tous les comptes (filters = new Document() a vide )
+            // Supprimer tous les comptes (filters = new Document() a vide )
             System.out.println("\n\nSupprimer tous les comptes ");
             //compte.deleteComptes(compte.CompteCollectionName,
               //      new Document()
@@ -132,18 +132,15 @@ public class Compte {
     }
 
     public Compte(){
-        // FD1 : Creating a Mongo client
 
         MongoClient mongoClient = new MongoClient( hostName , port );
 
-        // Creating Credentials
-        // RH : Ressources Humaines
+
         MongoCredential credential;
         credential = MongoCredential.createCredential(userName, dbName,
                 passWord.toCharArray());
         System.out.println("Connected to the database successfully");
         System.out.println("Credentials ::"+ credential);
-        // Accessing the database
         database = mongoClient.getDatabase(dbName);
     }
 
@@ -243,12 +240,11 @@ public class Compte {
     }
 
     public void getCompteById(String nomCollection, Integer compteId){
-        //Drop a collection
+
         System.out.println("\n\n\n*********** dans getCompteById *****************");
 
         MongoCollection<Document> colComptes=database.getCollection(nomCollection);
 
-        //BasicDBObject whereQuery = new BasicDBObject();
         Document whereQuery = new Document();
 
         whereQuery.put("_id", compteId );
@@ -265,8 +261,8 @@ public class Compte {
                            Document whereQuery,
                            Document projectionFields,
                            Document sortFields){
-        //Drop a collection
-        System.out.println("\n\n\n*********** dans getAgences *****************");
+
+        System.out.println("\n\n\n*********** dans getComptes *****************");
 
         MongoCollection<Document> colComptes=database.getCollection(nomCollection);
 
