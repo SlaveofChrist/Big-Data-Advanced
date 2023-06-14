@@ -1,13 +1,11 @@
-package fr.unice.master1.database;
+package fr.unice.master1;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.CreateCollectionOptions;
 import com.mongodb.client.model.UpdateOptions;
-import com.mongodb.client.model.ValidationOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
@@ -15,14 +13,11 @@ import org.bson.Document;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-/**
- * @author Mohamed ELYSALEM
- * @author Eliel WOTOBE
- */
+
 public class Gestionnaire {
 
     private MongoDatabase database;
-    private String dbName="bankAgency";
+    private String dbName="testBase";
     private String hostName="localhost";
     private int port=27017;
     private String userName="urh";
@@ -30,14 +25,14 @@ public class Gestionnaire {
     private String GestionnaireCollectionName="managers";
 
 
-    public static void main( String[] args ) {
+    public static void main( String args[] ) {
         try{
             Gestionnaire gestionnaire = new Gestionnaire();
             // Creation : test des fonctions de gestion d'une collection et d'ajout de documents
             System.out.println("\n\nCreation : ...");
             //gestionnaire.dropCollectionGestionnaire(gestionnaire.GestionnaireCollectionName);
             //gestionnaire.createCollectionGestionnaire(gestionnaire.GestionnaireCollectionName);
-            //gestionnaire.deleteGestionnaire(gestionnaire.GestionnaireCollectionName, new Document());
+            //gestionnaire.deleteGestionnaires(gestionnaire.GestionnaireCollectionName, new Document());
             //gestionnaire.testInsertOneGestionnaire();
             //gestionnaire.testInsertManyGestionnaires();
             //gestionnaire.getGestionnaireById(gestionnaire.GestionnaireCollectionName, 10);
@@ -108,7 +103,7 @@ public class Gestionnaire {
         }
     }
 
-    public Gestionnaire(){
+    Gestionnaire(){
         // FD1 : Creating a Mongo client
 
         MongoClient mongoClient = new MongoClient( hostName , port );
@@ -150,10 +145,6 @@ public class Gestionnaire {
         //Creating a collection
         database.createCollection(nomCollection);
         System.out.println("Collection Gestionnaire created successfully");
-    }
-
-    public void createCollectionGestionnaire(String nomCollection, Document validator){
-        database.createCollection(nomCollection,new CreateCollectionOptions().validationOptions(new ValidationOptions().validator(validator)));
     }
 
     public void deleteGestionnaires(String nomCollection, Document filters){

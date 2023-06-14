@@ -1,4 +1,4 @@
-package fr.unice.master1.database;
+package fr.unice.master1;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
@@ -6,7 +6,9 @@ import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.*;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Projections;
+import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
@@ -16,13 +18,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * @author Mohamed ELYSALEM
- * @author Eliel WOTOBE
- */
 public class Agence {
     private MongoDatabase database;
-    private String dbName="bankAgency";
+    private String dbName="testBase";
     private String hostName="localhost";
     private int port=27017;
     private String userName="urh";
@@ -30,14 +28,14 @@ public class Agence {
     private String AgenceCollectionName="agencies";
 
 
-    public static void main( String[] args ) {
+    public static void main( String args[] ) {
         try{
             Agence agence = new Agence();
             // Creation : test des fonctions de gestion d'une collection et d'ajout de documents
             System.out.println("\n\nCreation : ...");
             //agence.dropCollectionAgence(agence.AgenceCollectionName);
             //agence.createCollectionAgence(agence.AgenceCollectionName);
-            //agence.deleteAgence(agence.AgenceCollectionName, new Document());
+            //agence.deleteAgences(agence.AgenceCollectionName, new Document());
             //agence.testInsertOneAgence();
             //agence.testInsertManyAgences();
             //agence.getAgenceById(agence.AgenceCollectionName, 10);
@@ -127,7 +125,7 @@ public class Agence {
         }
     }
 
-    public Agence(){
+    Agence(){
         // FD1 : Creating a Mongo client
 
         MongoClient mongoClient = new MongoClient( hostName , port );
@@ -171,10 +169,6 @@ public class Agence {
         System.out.println("Collection Agence created successfully");
     }
 
-    public void createCollectionAgence(String nomCollection, Document validator){
-        database.createCollection(nomCollection,new CreateCollectionOptions().validationOptions(new ValidationOptions().validator(validator)));
-    }
-
     public void deleteAgences(String nomCollection, Document filters){
         System.out.println("\n\n\n*********** dans deleteAgences *****************");
         MongoCollection<Document> colAgences=database.getCollection(nomCollection);
@@ -203,7 +197,7 @@ public class Agence {
     public void insertOneAgence(String nomCollection, Document agence){
         //Drop a collection
         MongoCollection<Document> colAgences=database.getCollection(nomCollection);
-        colAgences.insertOne(agence);   
+        colAgences.insertOne(agence);
         //System.out.println("Document inserted successfully");
     }
 

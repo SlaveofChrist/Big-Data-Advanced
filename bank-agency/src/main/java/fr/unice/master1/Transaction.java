@@ -1,25 +1,20 @@
-package fr.unice.master1.database;
+package fr.unice.master1;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.CreateCollectionOptions;
 import com.mongodb.client.model.UpdateOptions;
-import com.mongodb.client.model.ValidationOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.*;
-/**
- * @author Mohamed ELYSALEM
- * @author Eliel WOTOBE
- */
+
 public class Transaction {
     private MongoDatabase database;
-    private String dbName="bankAgency";
+    private String dbName="testBase";
     private String hostName="localhost";
     private int port=27017;
     private String userName="urh";
@@ -27,7 +22,7 @@ public class Transaction {
     private String TransactionCollectionName="transactions";
 
 
-    public static void main( String[] args ) {
+    public static void main( String args[] ) {
         try{
             Transaction trans = new Transaction();
             // Creation : test des fonctions de gestion d'une collection et d'ajout de documents
@@ -143,7 +138,7 @@ public class Transaction {
         }
     }
 
-    public Transaction(){
+    Transaction(){
         // FD1 : Creating a Mongo client
 
         MongoClient mongoClient = new MongoClient( hostName , port );
@@ -185,10 +180,6 @@ public class Transaction {
         //Creating a collection
         database.createCollection(nomCollection);
         System.out.println("Collection Transaction created successfully");
-    }
-
-    public void createCollectionTransaction(String nomCollection, Document validator){
-        database.createCollection(nomCollection,new CreateCollectionOptions().validationOptions(new ValidationOptions().validator(validator)));
     }
 
     public void deleteTransactions(String nomCollection, Document filters){
@@ -288,7 +279,7 @@ public class Transaction {
     }
 
 
-    public Map<Integer, Double> getTransactionsUpdate(String nomCollection,
+    public Map<Integer, Double> getTransactionsUpdates(String nomCollection,
                                                        Document whereQuery,
                                                        Document projectionFields,
                                                        Document sortFields){
@@ -319,11 +310,12 @@ public class Transaction {
         // Convertir l'itérable en liste de documents
         Transaction trans = new Transaction();
         //List<Integer> modifiedTransactionIds = new ArrayList<>();
-        Map<Integer, Double> modifiedData = new HashMap<>();
+        //Map<Integer, Double> modifiedData = new HashMap<>();
+
         trans.getTransactions(nomCollection,whereQuery,new Document(),new Document());
         System.out.println("Avant appel  :");
         // Effectuer une requête pour récupérer les transactions  à modifiées
-        modifiedData=trans.getTransactionsUpdate(nomCollection,whereQuery,new Document(),new Document());
+        List<TransactionData> modifiedData = getTransactionsUpdate(nomCollection, whereQuery,new Document(),new Document());
         System.out.println("Apres appel  :");
         MongoCollection<Document> colTransactions=database.getCollection(nomCollection);
         MongoCollection<Document> accountCollection = database.getCollection("accounts");
@@ -331,23 +323,54 @@ public class Transaction {
         // Vérifier si des documents ont été modifiés
         if (updateResult.getModifiedCount() > 0) {
             // Mettre à jour le solde du compte associé pour chaque transaction mise à jour
-            for (Map.Entry<Integer, Double> entry : modifiedData.entrySet()) {
-                Integer destinationClientId = entry.getKey();
-                Double amount = entry.getValue();
-                Document accountFilter = new Document("clients_id", destinationClientId);
-                Document accountUpdate = new Document("$inc", new Document("balance",amount));
+            for (TransactionData transactionData : modifiedData) {
+                Integer destinationClientId = transactionData.getDestinationClientId();
+                Double amount = transactionData.getAmount();
+                Integer clientsId = transactionData.getClientsId();
 
-                // Effectuer la mise à jour du solde du compte
-                UpdateResult accountUpdateResult = accountCollection.updateOne(accountFilter, accountUpdate);
-                System.out.println("Infos mise à jour du compte : " + accountUpdateResult);
+                Document accountFilterDest = new Document("clients_id", destinationClientId);
+                Document accountUpdateDest = new Document("$inc", new Document("balance",amount));
+
+                Document accountFilterOrig = new Document("clients_id", clientsId);
+                Document accountUpdateOrig = new Document("$inc", new Document("balance",-amount));
+
+                // Effectuer la mise à jour du solde des comptes
+                UpdateResult accountUpdateResultDest = accountCollection.updateOne(accountFilterDest, accountUpdateDest);
+                UpdateResult accountUpdateResultOrig = accountCollection.updateOne(accountFilterOrig, accountUpdateOrig);
+                System.out.println("Infos mise à jour du compte de destination : " + accountUpdateResultDest);
+                System.out.println("Infos mise à jour du compte original de l'operation : " + accountUpdateResultOrig);
             }
             System.out.println("Les transactions ont été mises à jour avec succès. Les soldes des comptes associés ont été mis à jour.");
-
         }
         else{
             System.out.println("Aucune transaction mise à jour.");
         }
     }
+
+    public List<TransactionData> getTransactionsUpdate(String nomCollection, Document whereQuery,
+                                                       Document projectionFields, Document sortFields) {
+        System.out.println("\n\n\n*********** dans getTransactions Update *****************");
+
+        MongoCollection<Document> colTransactions = database.getCollection(nomCollection);
+
+        FindIterable<Document> listTransaction = colTransactions.find(whereQuery)
+                .sort(sortFields).projection(projectionFields);
+
+        List<TransactionData> modifiedData = new ArrayList<>();
+
+        // Itérer sur les documents
+        for (Document transaction : listTransaction) {
+            Integer destinationClientId = transaction.getInteger("destination_id_client");
+            Double amount = transaction.getDouble("amount");
+            Integer clientsId = transaction.getInteger("clients_id");
+
+            TransactionData transactionData = new TransactionData(destinationClientId, amount, clientsId);
+            modifiedData.add(transactionData);
+        }
+
+        return modifiedData;
+    }
+
 
 
 

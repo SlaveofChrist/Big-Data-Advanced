@@ -1,27 +1,22 @@
-package fr.unice.master1.database;
+package fr.unice.master1;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.CreateCollectionOptions;
 import com.mongodb.client.model.UpdateOptions;
-import com.mongodb.client.model.ValidationOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.Arrays;
 import java.util.Iterator;
-/**
- * @author Mohamed ELYSALEM
- * @author Eliel WOTOBE
- */
+
 public class Client {
 
     private MongoDatabase database;
-    private String dbName="bankAgency";
+    private String dbName="testBase";
     private String hostName="localhost";
     private int port=27017;
     private String userName="urh";
@@ -30,7 +25,7 @@ public class Client {
 
 
 
-    public static void main( String[] args ) {
+    public static void main( String args[] ) {
         try{
             Client cli = new Client();
             // Creation : test des fonctions de gestion d'une collection et d'ajout de documents
@@ -119,7 +114,7 @@ public class Client {
     }
 
 
-    public Client(){
+    Client(){
         // FD1 : Creating a Mongo client
 
         MongoClient mongoClient = new MongoClient( hostName , port );
@@ -145,7 +140,7 @@ public class Client {
 
         colClients=database.getCollection(nomCollection);
         System.out.println("!!!! Collection Client : "+colClients);
-
+        // Visiblement jamais !!!
         if (colClients==null) {
             System.out.println("Collection inexistante");
         }
@@ -160,10 +155,6 @@ public class Client {
         //Creating a collection
         database.createCollection(nomCollection);
         System.out.println("Collection Client created successfully");
-    }
-
-    public void createCollectionClient(String nomCollection, Document validator){
-        database.createCollection(nomCollection,new CreateCollectionOptions().validationOptions(new ValidationOptions().validator(validator)));
     }
 
     public void deleteClients(String nomCollection, Document filters){
