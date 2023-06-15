@@ -1,17 +1,9 @@
 [{
   "_id": 1,
   "name": "John Smith",
-  "agencies_id": 4
+  "agencies_id": 1
 },{
   "_id": 2,
   "name": "Alice Johnson",
   "agencies_id": 2
-},{
-  "_id": 3,
-  "name": "Robert Brown",
-  "agencies_id": 1
-},{
-  "_id": 4,
-  "name": "Emily Davis",
-  "agencies_id": 3
 }]

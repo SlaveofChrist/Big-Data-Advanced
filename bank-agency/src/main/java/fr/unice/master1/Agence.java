@@ -52,11 +52,11 @@ public class Agence {
             // where
             // Projeter sur _id, name et accounts
             // Trie en ordre croissant sur le name
-            System.out.println("\n\nAfficher tous les Agences Trie en ordre croissant sur le name");
+            System.out.println("\n\nAfficher tous les Agences Trie en ordre croissant sur le name et en projetant l'id, le nom et les comptes");
             agence.getAgences(agence.AgenceCollectionName,
                     new Document(),
                     new Document("_id",1).append("name" ,1).append("accounts",1),
-                    new Document("balance" ,1).append("created_at", 1)
+                    new Document("name" ,1)
             );
 
             // Affichage : Afficher tous les Agence
@@ -73,7 +73,7 @@ public class Agence {
             // Dont l'id  est  "1"
             // projection: tous les champs
             // tri : pas de tri
-            System.out.println("\n\nAfficher l'Agence Dont l'id  est  \"1\" ");
+            System.out.println("\n\nAfficher l'Agence Dont l'id  est  1 ");
             agence.getAgences(agence.AgenceCollectionName,
                     new Document("_id",1),
                     new Document(),
@@ -83,9 +83,9 @@ public class Agence {
             // Affichage : Afficher l'agence Dont le town est Fréjus
             // projection: tous les champs
             // tri : pas de tri
-            System.out.println("\n\nAfficher l'Agence Dont le town est Fréjus");
+            System.out.println("\n\nAfficher l'Agence Dont le town est Kessler-Crooks");
             agence.getAgences(agence.AgenceCollectionName,
-                    new Document("address.town","Fréjus"),
+                    new Document("address.town","Kessler-Crooks"),
                     new Document(),
                     new Document()
             );
@@ -101,7 +101,7 @@ public class Agence {
             );
 
             // Modifier : modifier l'agence nr (_id = 2). Mettre son adresse  (town à "Nice")
-            System.out.println("\n\nmodifier l'agence nr (_id = 2). Mettre son adresse (town à \"Nice\") ");
+            System.out.println("\n\nmodifier l'agence nr (_id = 2). Mettre son adresse (town à Nice) ");
             agence.updateAgences(agence.AgenceCollectionName,
                     new Document("_id",2),
                     new Document("$set", new Document("address.town", "Nice")),
@@ -119,6 +119,9 @@ public class Agence {
             //agence.deleteAgences(agence.AgenceCollectionName,
               //      new Document()
             //);
+
+            //Afficher les comptes des clients contenus dans l'agence 1
+            agence.getAccountsMatchWithAgenciesId(agence.AgenceCollectionName, "accounts","_id","agencies_id",new Document(),"accounts_matchent");
 
         }catch(Exception e){
             e.printStackTrace();
@@ -293,7 +296,26 @@ public class Agence {
         }
     }
 
+    public void getAccountsMatchWithAgenciesId(String localCollectionName,
+                                               String foreignCollectionName,
+                                               String localColJoinFieldName,
+                                               String foreigColJoinFieldName,
+                                               Document fielterFieldsOnLocalCollection,
+                                               String namedJoinedElements){
+        AggregateIterable<Document> outPutColl;
+        MongoCollection<Document> joinColl=
+                database.getCollection(localCollectionName);
+        System.out.println("\n\n\n*********** dans getAccountsMatchWithAgencies FE13b *****************");
+        outPutColl= joinColl.aggregate(Arrays.asList(
+                Aggregates.match(fielterFieldsOnLocalCollection),
+                Aggregates.lookup(foreignCollectionName, localColJoinFieldName,
+                        foreigColJoinFieldName, namedJoinedElements)));
+        for (Document colDoc : outPutColl){
+            System.out.println(colDoc);
+        }
 
+
+    }
 
     public void updateAgences(String nomCollection,Document whereQuery,Document updateExpressions, UpdateOptions updateOptions){
         //Drop a collection

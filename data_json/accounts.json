@@ -1,33 +1,902 @@
-[{
-  "_id": 2,
-  "balance": 2000,
-  "created_at": "02/01/2022",
-  "closed_at": "null",
-  "type": "current account",
-  "clients_id": 1,
-  "agencies_id": 1
-},{
-  "_id": 3,
-  "balance": 5100,
-  "created_at": "05/12/2022",
-  "closed_at": "null",
-  "type": "savings account",
-  "clients_id": 2,
-  "agencies_id": 1
-},{
-  "_id": 4,
-  "balance": 2000,
-  "created_at": "08/02/2022",
-  "closed_at": "null",
-  "type": "savings account",
-  "clients_id": 3,
-  "agencies_id": 2
-},{
-  "_id": 1,
-  "balance": 2000,
-  "created_at": "02/01/2022",
-  "closed_at": "null",
-  "type": "current account",
-  "clients_id": 3,
-  "agencies_id": 2
-}]
+[
+  {
+    "_id": 1,
+    "balance": 86760.8,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 19,
+    "agencies_id": 2
+  },
+  {
+    "_id": 2,
+    "balance": 47925.08,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 26,
+    "agencies_id": 2
+  },
+  {
+    "_id": 3,
+    "balance": 34956.81,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 28,
+    "agencies_id": 1
+  },
+  {
+    "_id": 4,
+    "balance": 87602.93,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 14,
+    "agencies_id": 1
+  },
+  {
+    "_id": 5,
+    "balance": 37313.04,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 40,
+    "agencies_id": 2
+  },
+  {
+    "_id": 6,
+    "balance": 22947.25,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 2,
+    "agencies_id": 1
+  },
+  {
+    "_id": 7,
+    "balance": 69430.01,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 45,
+    "agencies_id": 1
+  },
+  {
+    "_id": 8,
+    "balance": 3536.21,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 15,
+    "agencies_id": 2
+  },
+  {
+    "_id": 9,
+    "balance": 1371.71,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 8,
+    "agencies_id": 1
+  },
+  {
+    "_id": 10,
+    "balance": 61871.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 2,
+    "agencies_id": 2
+  },
+  {
+    "_id": 11,
+    "balance": 33048.67,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 35,
+    "agencies_id": 1
+  },
+  {
+    "_id": 12,
+    "balance": 86811.71,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 1,
+    "agencies_id": 2
+  },
+  {
+    "_id": 13,
+    "balance": 94018.97,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 42,
+    "agencies_id": 2
+  },
+  {
+    "_id": 14,
+    "balance": 87378.61,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 37,
+    "agencies_id": 2
+  },
+  {
+    "_id": 15,
+    "balance": 49234.61,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 8,
+    "agencies_id": 2
+  },
+  {
+    "_id": 16,
+    "balance": 63111.35,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 35,
+    "agencies_id": 1
+  },
+  {
+    "_id": 17,
+    "balance": 17886.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 17,
+    "agencies_id": 1
+  },
+  {
+    "_id": 18,
+    "balance": 54144.77,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 16,
+    "agencies_id": 1
+  },
+  {
+    "_id": 19,
+    "balance": 36481.02,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 22,
+    "agencies_id": 1
+  },
+  {
+    "_id": 20,
+    "balance": 53374.42,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 2,
+    "agencies_id": 2
+  },
+  {
+    "_id": 21,
+    "balance": 94982.96,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 50,
+    "agencies_id": 2
+  },
+  {
+    "_id": 22,
+    "balance": 20346.2,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 4,
+    "agencies_id": 2
+  },
+  {
+    "_id": 23,
+    "balance": 89763.01,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 4,
+    "agencies_id": 1
+  },
+  {
+    "_id": 24,
+    "balance": 64828.83,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 48,
+    "agencies_id": 1
+  },
+  {
+    "_id": 25,
+    "balance": 71734.62,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 49,
+    "agencies_id": 2
+  },
+  {
+    "_id": 26,
+    "balance": 95714.05,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 16,
+    "agencies_id": 2
+  },
+  {
+    "_id": 27,
+    "balance": 64245.33,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 31,
+    "agencies_id": 1
+  },
+  {
+    "_id": 28,
+    "balance": 67313.65,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 28,
+    "agencies_id": 2
+  },
+  {
+    "_id": 29,
+    "balance": 32475.95,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 1,
+    "agencies_id": 1
+  },
+  {
+    "_id": 30,
+    "balance": 53044.99,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 29,
+    "agencies_id": 1
+  },
+  {
+    "_id": 31,
+    "balance": 71321.3,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 44,
+    "agencies_id": 1
+  },
+  {
+    "_id": 32,
+    "balance": 72774.11,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 29,
+    "agencies_id": 2
+  },
+  {
+    "_id": 33,
+    "balance": 72168.29,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 29,
+    "agencies_id": 2
+  },
+  {
+    "_id": 34,
+    "balance": 82344.5,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 5,
+    "agencies_id": 1
+  },
+  {
+    "_id": 35,
+    "balance": 17116.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 44,
+    "agencies_id": 1
+  },
+  {
+    "_id": 36,
+    "balance": 43351.8,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 21,
+    "agencies_id": 2
+  },
+  {
+    "_id": 37,
+    "balance": 12300.9,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 13,
+    "agencies_id": 1
+  },
+  {
+    "_id": 38,
+    "balance": 81872.58,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 37,
+    "agencies_id": 1
+  },
+  {
+    "_id": 39,
+    "balance": 4540.35,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 26,
+    "agencies_id": 2
+  },
+  {
+    "_id": 40,
+    "balance": 79001.66,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 40,
+    "agencies_id": 1
+  },
+  {
+    "_id": 41,
+    "balance": 37782.88,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 10,
+    "agencies_id": 2
+  },
+  {
+    "_id": 42,
+    "balance": 83830.59,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 33,
+    "agencies_id": 2
+  },
+  {
+    "_id": 43,
+    "balance": 19310.59,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 49,
+    "agencies_id": 1
+  },
+  {
+    "_id": 44,
+    "balance": 48139.9,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 43,
+    "agencies_id": 1
+  },
+  {
+    "_id": 45,
+    "balance": 42575.87,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 45,
+    "agencies_id": 1
+  },
+  {
+    "_id": 46,
+    "balance": 13473.94,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 41,
+    "agencies_id": 2
+  },
+  {
+    "_id": 47,
+    "balance": 44912.07,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 23,
+    "agencies_id": 2
+  },
+  {
+    "_id": 48,
+    "balance": 23657.94,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 32,
+    "agencies_id": 2
+  },
+  {
+    "_id": 49,
+    "balance": 71085.21,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 41,
+    "agencies_id": 2
+  },
+  {
+    "_id": 50,
+    "balance": 11109.86,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 47,
+    "agencies_id": 1
+  },
+  {
+    "_id": 51,
+    "balance": 36422.63,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 29,
+    "agencies_id": 2
+  },
+  {
+    "_id": 52,
+    "balance": 33449.73,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 47,
+    "agencies_id": 2
+  },
+  {
+    "_id": 53,
+    "balance": 73404.99,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 21,
+    "agencies_id": 2
+  },
+  {
+    "_id": 54,
+    "balance": 24424.26,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 7,
+    "agencies_id": 1
+  },
+  {
+    "_id": 55,
+    "balance": 63482.23,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 11,
+    "agencies_id": 1
+  },
+  {
+    "_id": 56,
+    "balance": 31992.16,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 38,
+    "agencies_id": 1
+  },
+  {
+    "_id": 57,
+    "balance": 35439.27,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 37,
+    "agencies_id": 1
+  },
+  {
+    "_id": 58,
+    "balance": 94508.72,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 26,
+    "agencies_id": 2
+  },
+  {
+    "_id": 59,
+    "balance": 84482.69,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 7,
+    "agencies_id": 1
+  },
+  {
+    "_id": 60,
+    "balance": 21978.52,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 38,
+    "agencies_id": 1
+  },
+  {
+    "_id": 61,
+    "balance": 43076.24,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 7,
+    "agencies_id": 1
+  },
+  {
+    "_id": 62,
+    "balance": 50460.32,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 27,
+    "agencies_id": 2
+  },
+  {
+    "_id": 63,
+    "balance": 34707.17,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 15,
+    "agencies_id": 2
+  },
+  {
+    "_id": 64,
+    "balance": 30213.26,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 30,
+    "agencies_id": 1
+  },
+  {
+    "_id": 65,
+    "balance": 46108.03,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 23,
+    "agencies_id": 2
+  },
+  {
+    "_id": 66,
+    "balance": 52943.38,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 10,
+    "agencies_id": 2
+  },
+  {
+    "_id": 67,
+    "balance": 30002.07,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 34,
+    "agencies_id": 1
+  },
+  {
+    "_id": 68,
+    "balance": 30920.9,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 17,
+    "agencies_id": 2
+  },
+  {
+    "_id": 69,
+    "balance": 80083.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 34,
+    "agencies_id": 1
+  },
+  {
+    "_id": 70,
+    "balance": 21021.75,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 25,
+    "agencies_id": 2
+  },
+  {
+    "_id": 71,
+    "balance": 20271.98,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 19,
+    "agencies_id": 2
+  },
+  {
+    "_id": 72,
+    "balance": 88004.93,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 18,
+    "agencies_id": 2
+  },
+  {
+    "_id": 73,
+    "balance": 48414.82,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 14,
+    "agencies_id": 2
+  },
+  {
+    "_id": 74,
+    "balance": 9713.21,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 20,
+    "agencies_id": 1
+  },
+  {
+    "_id": 75,
+    "balance": 20831.53,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 45,
+    "agencies_id": 1
+  },
+  {
+    "_id": 76,
+    "balance": 20183.06,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 44,
+    "agencies_id": 1
+  },
+  {
+    "_id": 77,
+    "balance": 15190.75,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 32,
+    "agencies_id": 1
+  },
+  {
+    "_id": 78,
+    "balance": 91510.1,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 7,
+    "agencies_id": 2
+  },
+  {
+    "_id": 79,
+    "balance": 21073.6,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 13,
+    "agencies_id": 1
+  },
+  {
+    "_id": 80,
+    "balance": 72282.93,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 33,
+    "agencies_id": 1
+  },
+  {
+    "_id": 81,
+    "balance": 26421.11,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 30,
+    "agencies_id": 1
+  },
+  {
+    "_id": 82,
+    "balance": 89788.65,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 21,
+    "agencies_id": 1
+  },
+  {
+    "_id": 83,
+    "balance": 57996.95,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 47,
+    "agencies_id": 2
+  },
+  {
+    "_id": 84,
+    "balance": 15655.51,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 19,
+    "agencies_id": 1
+  },
+  {
+    "_id": 85,
+    "balance": 47016.22,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 14,
+    "agencies_id": 1
+  },
+  {
+    "_id": 86,
+    "balance": 42280.43,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 21,
+    "agencies_id": 2
+  },
+  {
+    "_id": 87,
+    "balance": 63484.14,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 24,
+    "agencies_id": 1
+  },
+  {
+    "_id": 88,
+    "balance": 30638.7,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 50,
+    "agencies_id": 2
+  },
+  {
+    "_id": 89,
+    "balance": 63546.95,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 16,
+    "agencies_id": 2
+  },
+  {
+    "_id": 90,
+    "balance": 74951.79,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 43,
+    "agencies_id": 1
+  },
+  {
+    "_id": 91,
+    "balance": 57702.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 50,
+    "agencies_id": 2
+  },
+  {
+    "_id": 92,
+    "balance": 68970.15,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 46,
+    "agencies_id": 1
+  },
+  {
+    "_id": 93,
+    "balance": 78626.6,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 5,
+    "agencies_id": 1
+  },
+  {
+    "_id": 94,
+    "balance": 38188.28,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 23,
+    "agencies_id": 2
+  },
+  {
+    "_id": 95,
+    "balance": 33567.16,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 23,
+    "agencies_id": 1
+  },
+  {
+    "_id": 96,
+    "balance": 56775.9,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 19,
+    "agencies_id": 2
+  },
+  {
+    "_id": 97,
+    "balance": 3614.64,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 43,
+    "agencies_id": 1
+  },
+  {
+    "_id": 98,
+    "balance": 93641.14,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "savings account",
+    "clients_id": 8,
+    "agencies_id": 1
+  },
+  {
+    "_id": 99,
+    "balance": 62101.98,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 10,
+    "agencies_id": 1
+  },
+  {
+    "_id": 100,
+    "balance": 93387.94,
+    "created_at": "14/06/2023",
+    "closed_at": "null",
+    "type": "current account",
+    "clients_id": 8,
+    "agencies_id": 1
+  }
+]

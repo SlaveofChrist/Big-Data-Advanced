@@ -11,11 +11,11 @@ This project aim to implement the concepts of DMS NoSQL
   ### Commands
     * use bankAgency
     * load("C:/Big-Data-Advanced/scripts/validations_database.js")
-    * mongoimport -d=airbase -c=accounts --file=C:\Big-Data-Advanced\data_json\accounts.json --jsonArray  
-    * mongoimport -d=airbase -c=clients --file=C:\Big-Data-Advanced\data_json\clients.json --jsonArray  
-    * mongoimport -d=airbase -c=agencies --file=C:\Big-Data-Advanced\data_json\agencies.json --jsonArray  
-    * mongoimport -d=airbase -c=managers --file=C:\Big-Data-Advanced\data_json\managers.json --jsonArray  
-    * mongoimport -d=airbase -c=transactions --file=C:\Big-Data-Advanced\data_json\transactions.json --jsonArray  
+    * mongoimport -d=bankAgency -c=accounts --file=C:\Big-Data-Advanced\data_json\accounts.json --jsonArray  
+    * mongoimport -d=bankAgency -c=clients --file=C:\Big-Data-Advanced\data_json\clients.json --jsonArray  
+    * mongoimport -d=bankAgency -c=agencies --file=C:\Big-Data-Advanced\data_json\agencies.json --jsonArray  
+    * mongoimport -d=bankAgency -c=managers --file=C:\Big-Data-Advanced\data_json\managers.json --jsonArray  
+    * mongoimport -d=bankAgency -c=transactions --file=C:\Big-Data-Advanced\data_json\transactions.json --jsonArray  
 
 
 ## Authors
